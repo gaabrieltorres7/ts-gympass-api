@@ -28,4 +28,12 @@ describe('Get User Profile useCase', () => {
     expect(user).toHaveProperty('id')
     expect(user).toHaveProperty('name')
   })
+  
+  it('should not be able to get user profile with wrong id', async () => {
+    expect( () =>
+      sut.execute({
+        userId: 'invalid_id'
+      })
+    ).rejects.toBeInstanceOf(ResourceNotFoundError)
+  })
 })
