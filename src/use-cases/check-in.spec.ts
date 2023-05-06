@@ -2,7 +2,7 @@ import { it, expect, describe, beforeEach, afterEach, vi } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { CheckInUseCase } from './check-in'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository';
-import { Decimal } from '@prisma/client/runtime';
+import { Decimal } from '@prisma/client/runtime/library';
 
 let checkInsRepository: InMemoryCheckInsRepository
 let gymsRepository: InMemoryGymsRepository
@@ -83,7 +83,7 @@ describe('Check-in useCase', () => {
     expect(checkIn.id).toEqual(expect.any(String))
   })
 
-  it('should not be able to check in on distant gym', async () => {
+  it('should not be able to check in on a distant gym', async () => {
     gymsRepository.items.push({
       id: 'gym-id-2',
       title: 'gym-name',
