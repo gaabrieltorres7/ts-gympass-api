@@ -8,7 +8,7 @@ export async function nearby(req: FastifyRequest, res: FastifyReply) {
     longitude: z.number().refine((value) => Math.abs(value) <= 180, { message: 'Longitude must be between -180 and 180' }),
   })
 
-  const { latitude, longitude } = nearbyGymsQuerySchema.parse(req.body)
+  const { latitude, longitude } = nearbyGymsQuerySchema.parse(req.query)
 
   const fetchNearbyGymsUseCase = makeFetchNearbyGymsUseCase()
 
