@@ -27,7 +27,6 @@ export async function authenticate(req: FastifyRequest, res: FastifyReply) {
     if(error instanceof InvalidCredentialsError) {
       return res.status(400).send({ message: error.message })
     }
-    console.log(error)
 
     return res.status(500).send() // fix this
     
