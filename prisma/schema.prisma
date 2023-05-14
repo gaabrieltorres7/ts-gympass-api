@@ -14,6 +14,7 @@ model User {
   email         String    @unique
   created_at    DateTime  @default(now())
   password_hash String
+  role          Role      @default(MEMBER)
   checkIns      CheckIn[]
 
   @@map("users")
@@ -41,4 +42,9 @@ model Gym {
   checkIns    CheckIn[]
 
   @@map("gyms")
+}
+
+enum Role {
+  ADMIN
+  MEMBER
 }
