@@ -1,4 +1,4 @@
-# gympass api
+# gympass
 
 ## Functional Requirements
  - [x] It must be possible to register.
