@@ -17,6 +17,7 @@
 - Fastify
 - PostgreSQL
 - Docker
+- PrismaORM
 
 <h2 id="started">🚀 Getting started</h2>
 
