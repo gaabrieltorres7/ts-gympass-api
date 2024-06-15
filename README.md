@@ -25,6 +25,7 @@
 
 - NodeJS
 - Git
+- Docker
 
 <h3>Cloning</h3>
 
@@ -50,6 +51,7 @@ JWT_SECRET=example
 ```bash
 cd ts-gympass-api
 npm i
+docker compose up
 npm run dev
 npm run test
 npm run test:watch
